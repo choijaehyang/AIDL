@@ -349,6 +349,43 @@ nav {
     color: var(--secondary-color);
 }
 
+/* QR Code Section */
+.qr-code-section {
+    margin-top: 40px;
+    text-align: center;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.qr-code-section h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+#qrcode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+#qrcode img {
+    display: block;
+    margin: 0 auto;
+}
+
+.qr-code-section p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
 /* Footer */
 footer {
     background-color: var(--primary-color);
