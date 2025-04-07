@@ -6,6 +6,8 @@
     <title>인공지능디지털연구소 TV - 최재향 대표</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- QR 코드 라이브러리 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
 </head>
 <body>
     <header class="hero">
@@ -111,25 +113,25 @@
         <div class="container">
             <h2>인기 동영상</h2>
             <div class="video-grid">
-                <a href="https://www.youtube.com/watch?v=f0cN573Cqn0" class="video-card" target="_blank">
+                <a href="https://www.youtube.com/watch?v=13pCpLsMMug&t=25s" class="video-card" target="_blank">
                     <div class="thumbnail">
-                        <img src="https://img.youtube.com/vi/f0cN573Cqn0/maxresdefault.jpg" alt="귀쫑긋친구들의 특별한 하루">
+                        <img src="https://img.youtube.com/vi/13pCpLsMMug/maxresdefault.jpg" alt="SNS 유튜브 마케팅 10배로">
                         <div class="play-button">
                             <i class="fas fa-play"></i>
                         </div>
                     </div>
-                    <h3>귀쫑긋친구들의 특별한 하루</h3>
-                    <p>AI 영화, 애니메이션 제작 강의</p>
+                    <h3>SNS 유튜브 마케팅 10배로</h3>
+                    <p>소셜 미디어 마케팅 전략</p>
                 </a>
-                <a href="https://www.youtube.com/watch?v=13pCpLsMMug" class="video-card" target="_blank">
+                <a href="https://www.youtube.com/watch?v=f0cN573Cqn0&t=1s" class="video-card" target="_blank">
                     <div class="thumbnail">
-                        <img src="https://img.youtube.com/vi/13pCpLsMMug/maxresdefault.jpg" alt="인공지능 기초">
+                        <img src="https://img.youtube.com/vi/f0cN573Cqn0/maxresdefault.jpg" alt="AI 영상제작">
                         <div class="play-button">
                             <i class="fas fa-play"></i>
                         </div>
                     </div>
-                    <h3>인공지능 기초</h3>
-                    <p>AI의 기본 개념과 응용</p>
+                    <h3>AI 영상제작</h3>
+                    <p>인공지능을 활용한 영상 제작 강의</p>
                 </a>
                 <a href="https://www.youtube.com/watch?v=dGzyOe573RQ" class="video-card" target="_blank">
                     <div class="thumbnail">
@@ -159,6 +161,13 @@
                     </a>
                 </div>
                 <p>더 많은 정보는 유튜브 채널을 방문해주세요!</p>
+                
+                <!-- QR 코드 섹션 추가 -->
+                <div class="qr-code-section">
+                    <h3>웹사이트 QR 코드</h3>
+                    <div id="qrcode"></div>
+                    <p>QR 코드를 스캔하여 웹사이트 방문하기</p>
+                </div>
             </div>
         </div>
     </section>
@@ -168,5 +177,24 @@
             <p>&copy; 2024 인공지능디지털연구소 TV. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- QR 코드 생성 스크립트 -->
+    <script>
+        // 현재 페이지 URL 가져오기
+        const currentUrl = window.location.href;
+        
+        // QR 코드 생성
+        QRCode.toCanvas(document.getElementById('qrcode'), currentUrl, {
+            width: 200,
+            margin: 2,
+            color: {
+                dark: '#2c3e50',
+                light: '#ffffff'
+            }
+        }, function (error) {
+            if (error) console.error(error);
+            console.log('QR 코드가 생성되었습니다!');
+        });
+    </script>
 </body>
 </html> 
