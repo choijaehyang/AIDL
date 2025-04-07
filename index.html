@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>인공지능디지털연구소 TV - 최재향 대표</title>
+    
+    <!-- 소셜 미디어 미리보기 메타 태그 -->
+    <meta property="og:title" content="인공지능디지털연구소 TV - 최재향 대표">
+    <meta property="og:description" content="최재향 대표와 함께하는 AI & 디지털 혁신의 여정">
+    <meta property="og:image" content="https://img.youtube.com/vi/13pCpLsMMug/maxresdefault.jpg">
+    <meta property="og:url" content="https://www.youtube.com/watch?v=13pCpLsMMug&t=25s">
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- QR 코드 라이브러리 추가 -->
@@ -165,7 +172,7 @@
                 <!-- QR 코드 섹션 추가 -->
                 <div class="qr-code-section">
                     <h3>웹사이트 QR 코드</h3>
-                    <div id="qrcode"></div>
+                    <canvas id="qrcode"></canvas>
                     <p>QR 코드를 스캔하여 웹사이트 방문하기</p>
                 </div>
             </div>
@@ -180,21 +187,23 @@
 
     <!-- QR 코드 생성 스크립트 -->
     <script>
-        // 현재 페이지 URL 가져오기
-        const currentUrl = window.location.href;
-        
-        // QR 코드 생성
-        QRCode.toCanvas(document.getElementById('qrcode'), currentUrl, {
-            width: 200,
-            margin: 2,
-            color: {
-                dark: '#2c3e50',
-                light: '#ffffff'
-            }
-        }, function (error) {
-            if (error) console.error(error);
-            console.log('QR 코드가 생성되었습니다!');
-        });
+        window.onload = function() {
+            // 현재 페이지 URL 가져오기
+            const currentUrl = window.location.href;
+            
+            // QR 코드 생성
+            QRCode.toCanvas(document.getElementById('qrcode'), currentUrl, {
+                width: 200,
+                margin: 2,
+                color: {
+                    dark: '#2c3e50',
+                    light: '#ffffff'
+                }
+            }, function (error) {
+                if (error) console.error(error);
+                console.log('QR 코드가 생성되었습니다!');
+            });
+        };
     </script>
 </body>
 </html> 
