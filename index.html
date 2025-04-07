@@ -13,8 +13,8 @@
     
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- QR 코드 라이브러리 추가 -->
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <!-- QR 코드 라이브러리 변경 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
     <header class="hero">
@@ -172,7 +172,7 @@
                 <!-- QR 코드 섹션 추가 -->
                 <div class="qr-code-section">
                     <h3>웹사이트 QR 코드</h3>
-                    <canvas id="qrcode"></canvas>
+                    <div id="qrcode"></div>
                     <p>QR 코드를 스캔하여 웹사이트 방문하기</p>
                 </div>
             </div>
@@ -187,23 +187,20 @@
 
     <!-- QR 코드 생성 스크립트 -->
     <script>
-        window.onload = function() {
+        document.addEventListener('DOMContentLoaded', function() {
             // 현재 페이지 URL 가져오기
             const currentUrl = window.location.href;
             
             // QR 코드 생성
-            QRCode.toCanvas(document.getElementById('qrcode'), currentUrl, {
+            new QRCode(document.getElementById("qrcode"), {
+                text: currentUrl,
                 width: 200,
-                margin: 2,
-                color: {
-                    dark: '#2c3e50',
-                    light: '#ffffff'
-                }
-            }, function (error) {
-                if (error) console.error(error);
-                console.log('QR 코드가 생성되었습니다!');
+                height: 200,
+                colorDark : "#2c3e50",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
             });
-        };
+        });
     </script>
 </body>
 </html> 
