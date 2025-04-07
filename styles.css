@@ -433,4 +433,33 @@ footer {
     .video-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* AI Talker Button */
+.ai-talker-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: var(--light-bg);
+}
+
+.ai-talker-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.ai-talker-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.ai-talker-button i {
+    margin-right: 10px;
 } 
